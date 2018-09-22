@@ -108,7 +108,7 @@ p a:hover::after
 }
 p::selection
 {
-	
+
 }
 h1{font-size: 48px;}
 h2{font-size: 36px;}
@@ -122,14 +122,14 @@ h1, h2, h3, h4, h5, h6
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
 h6::selection
 {
-	
+
 }
 .form-control
 {
@@ -206,7 +206,6 @@ section
 {
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
 	padding-left: 40px;
 	padding-bottom: 45px;
 	padding-right: 41px;
@@ -240,9 +239,6 @@ section
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
 }
 .nopadding
 {
@@ -650,7 +646,7 @@ section
 }
 .main_content_scroll
 {
-	margin-top: 118px;
+	margin-top: 50px;
 	max-height: calc(100% - 193px - 72px - 30px);
 	padding-right: 30px;
 }
@@ -673,7 +669,7 @@ section
 	width: 100%;
 	margin-left: -15px;
 	margin-right: -15px;
-	padding-bottom: 60px;
+	padding-bottom: 30px;
 }
 .service
 {
@@ -706,7 +702,7 @@ section
 }
 .services_button
 {
-	margin-top: 17px;
+	margin-top: -17px;
 	width: 239px;
 	height: 55px;
 	text-align: center;
@@ -729,4 +725,8 @@ section
 .services_button:hover
 {
 	background: #100f3a;
+}
+
+#totalDetails{
+	margin-top:3%;
 }

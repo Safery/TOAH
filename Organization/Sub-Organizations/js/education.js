@@ -15,7 +15,7 @@ $(document).ready(function()
 {
 	"use strict";
 
-	/* 
+	/*
 
 	1. Vars and Inits
 
@@ -52,7 +52,7 @@ $(document).ready(function()
 
 	initMenu();
 
-	/* 
+	/*
 
 	2. Set Header
 
@@ -70,7 +70,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	3. Init Menu
 
