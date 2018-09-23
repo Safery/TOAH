@@ -23,6 +23,26 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
+
+		<style>
+
+		#map {
+				height: 50vh;
+		}
+
+		@media screen and (min-device-width: 640px){
+			/* some CSS here */
+			#map {
+	        width: 50vw;
+	      }
+		}
+		@media screen and (max-device-width: 640px){
+			/* some CSS here */
+			#map {
+	        width: 100vw;
+	      }
+		}
+		</style>
 	</head>
 	<body id="top">
 
@@ -57,28 +77,19 @@
 				<div class="container">
 					<div class="row">
 						<div class="8u">
-							<section>
-								<center><h2>Search Below</h2></center>
-								<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-								<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
+							<section id="map">
+
 							</section>
 						</div>
 						<div class="4u">
 							<section>
-								<center><h3>Search Query</h3></center>
-								<p>Feugiat amet accumsan ante aliquet feugiat accumsan. Ante blandit accumsan eu amet tortor non lorem felis semper. Interdum adipiscing orci feugiat penatibus adipiscing col cubilia lorem ipsum dolor sit amet feugiat consequat.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
-							<hr />
-							<section>
-								<h3>Ante sed commodo</h3>
+								<center><h3>Other Services</h3></center>
 								<ul class="alt">
-									<li><a href="#">Erat blandit risus vis adipiscing</a></li>
-									<li><a href="#">Tempus ultricies faucibus amet</a></li>
-									<li><a href="#">Arcu commodo non adipiscing quis</a></li>
-									<li><a href="#">Accumsan vis lacinia semper</a></li>
+									<li><a href="javascript:clearOverlays();">Air Conditioned Public Places & Cooling Centres</a></li>
+									<li><a href="javascript:markIt('earlyon_new.json');">Child & Family Programs</a></li>
+									<li><a href="javascript:clearOverlays();">Green P Parking</a></li>
+									<li><a href="javascript:clearOverlays();">Road Restrictions</a></li>
+									<li><a href="javascript:clearOverlays();">Traffic Cameras</a></li>
 								</ul>
 							</section>
 						</div>
@@ -109,6 +120,99 @@
 			<footer id="footer">
 
 			</footer>
+			<script>
+      var map;
+			var markersArray = [];
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: new google.maps.LatLng(43.6532, -79.3832),
+          mapTypeId: 'terrain'
+        });
+      }
+
+			function markIt(src){
+
+				clearOverlays();
+
+				$.getJSON(src, function(results) {
+
+          console.log(results);
+
+					function placeMarker(res){
+						var latLng = new google.maps.LatLng(res.lat, res.lng);
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              animation: google.maps.Animation.DROP,
+              title: res.agency
+            });
+						markersArray.push(marker);
+            var message = '<b>' + res.agency + '</b>\n\n\n<p>Address: ' + res.address + '</p>\n<p>Phone Number: ' + res.phone + '</p>';
+            var infoWindow = new google.maps.InfoWindow({
+                content: message
+            });
+            marker.addListener('click', function() {
+							infoWindow.close(); // Close previously opened infowindow
+        			infoWindow.setContent( "<div id='infowindow'>"+ message +"</div>");
+        			infoWindow.open(map, marker);
+            });
+					}
+            // Success
+          for (var i = 0; i < results.length; i++) {
+            var res = results[i];
+            placeMarker(res);
+          }
+        });
+			}
+
+			function markIt(src){
+
+				clearOverlays();
+
+				$.getJSON(src, function(results) {
+
+          console.log(results);
+
+					function placeMarker(res){
+						var latLng = new google.maps.LatLng(res.lat, res.lng);
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              animation: google.maps.Animation.DROP,
+              title: res.agency
+            });
+						markersArray.push(marker);
+            var message = '<b>' + res.agency + '</b>\n\n\n<p>Address: ' + res.address + '</p>\n<p>Phone Number: ' + res.phone + '</p>';
+            var infoWindow = new google.maps.InfoWindow({
+                content: message
+            });
+            marker.addListener('click', function() {
+							infoWindow.close(); // Close previously opened infowindow
+        			infoWindow.setContent( "<div id='infowindow'>"+ message +"</div>");
+        			infoWindow.open(map, marker);
+            });
+					}
+            // Success
+          for (var i = 0; i < results.length; i++) {
+            var res = results[i];
+            placeMarker(res);
+          }
+        });
+			}
+
+			function clearOverlays() {
+			  for (var i = 0; i < markersArray.length; i++ ) {
+			    markersArray[i].setMap(null);
+			  }
+			  markersArray.length = 0;
+			}
+
+      // Loop through the results array and place a marker for each
+      // set of coordinates.
+    </script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRX_UqfmXi95p03n5HZrBqhYRaBGb0DZw&callback=initMap">
+		</script>
 
 	</body>
 </html>
