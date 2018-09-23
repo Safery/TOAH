@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Useless Chatbot</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+  <div class="main">
+  <div class="chatbox">
+    <div class="header">
+      <div class="icon"></div>
+      <p>TOAH. </p><p style="color:#33cc33"><strong>Online now</strong></p>
+    </div>
+    <div class="chat">
+      <p class="ralph" data-time="14:22">Sup nigga, I am TOAH. "... I can help ya find shit. Do you have any question for me?</p>
+    </div>
+    <div class="footer">
+      <p contenteditable></p>
+      <button class="submit-chat"><i class="fas fa-arrow-circle-right"></i></button>
+    </div>
+  </div>
+  <p class="heart">made with ♥ by Malte Zoudlik</p>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+* {
+padding: 0;
+margin: 0;
+font-family: "Quicksand";
+box-sizing: border-box;
+}
+
+.main {
+background: #43C6AC;
+/* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #191654, #43C6AC);
+/* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #191654, #43C6AC);
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+min-width: 100vw;
+min-height: 100vh;
+}
+.main h1 {
+color: rgba(255, 255, 255, 0.3);
+font-size: 90px;
+max-width: 600px;
+font-weight: 400;
+padding-top: 100px;
+margin-left: 200px;
+}
+.main .chatbox {
+position: fixed;
+right: 0;
+bottom: 20px;
+background: #fff;
+width: 250px;
+border-radius: 6px;
+}
+.main .chatbox .header {
+border-bottom: solid 1px rgba(51, 51, 51, 0.2);
+padding: 10px;
+}
+.main .chatbox .header p {
+font-size: 12px;
+}
+.main .chatbox .header .icon {
+background: url("http://78.media.tumblr.com/ce5a3e2636c046668d676586d6a8797a/tumblr_n1zja6VwQm1qmcarzo6_r2_250.gif") -10px center;
+width: 30px;
+height: 30px;
+float: left;
+background-size: cover;
+border-radius: 50%;
+margin-right: 10px;
+}
+.main .chatbox .chat {
+height: 280px;
+padding: 10px;
+font-size: 12px;
+font-weight: 500;
+overflow-y: scroll;
+}
+.main .chatbox .chat p {
+background: #17275B;
+color: #fff;
+border-radius: 9px;
+padding: 8px 10px;
+display: inline-block;
+max-width: calc(100% - 20px);
+margin-top: 15px;
+position: relative;
+margin-bottom: 10px;
+clear: both;
+}
+.main .chatbox .chat p:before {
+content: attr(data-time);
+color: #cccccc;
+left: 4px;
+font-size: 12px;
+top: -15px;
+position: absolute;
+}
+.main .chatbox .chat p.self {
+float: right;
+background: #97EAF7;
+margin-left: auto;
+}
+.main .chatbox .chat p.self:before {
+right: 4px;
+left: auto;
+}
+.main .chatbox .chat p.ralph {
+margin-right: auto;
+float: left;
+}
+.main .chatbox .footer {
+width: 100%;
+position: relative;
+}
+.main .chatbox .footer p {
+width: 100%;
+background: #e6e6e6;
+padding: 10px;
+height: 34px;
+font-size: 12px;
+border: none;
+font-weight: 500;
+display: block;
+border-bottom: solid 10px #e6e6e6;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+position: relative;
+overflow-y: scroll;
+}
+.main .chatbox .footer button {
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+border: none;
+background: none;
+cursor: pointer;
+color: #17275B;
+transition: all 300ms;
+}
+.main .chatbox .footer button:hover {
+color: #97EAF7;
+}
+.main .chatbox .footer:after {
+height: 10px;
+width: 100%;
+left: 0;
+display: block;
+top: 0;
+position: absolute;
+z-index: 10;
+content: "";
+background: linear-gradient(to bottom, #e6e6e6, rgba(255, 255, 255, 0));
+}
+.main .heart {
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+color: rgba(255, 255, 255, 0.2);
+}
+</style>
+
+<script>
+
+var r1 = ['hello', 'hi', 'yo', 'sup', 'whatsup', 'whats up', 'wud up', 'wag wan', 'hey'];
+var a1 = ['HI!', 'Hello, how are you?', 'hello there', 'hello :)', 'hey!']
+
+
+$(document).keypress(function(e) {
+  var keycode = e.keyCode ? e.keyCode : e.which;
+  if (keycode == "13" && $("p[contenteditable]").is(":focus")) {
+    submit_text();
+  }
+});
+
+$(".submit-chat").click(function() {
+  submit_text();
+});
+
+function submit_text() {
+  var val = $("p[contenteditable]").text();
+  var time = new Date();
+  time = addZero(time.getHours()) + ":" + addZero(time.getMinutes());
+  $(".chat").append('<p class="self" data-time="' + time + '">' + val + "</p>");
+  $("p[contenteditable]").empty();
+  $(".chat").scrollTop($(".chat")[0].scrollHeight);
+
+
+  if (r1.indexOf(val.toLowerCase()) >= 0) {
+      //do something
+      // gen value from 0 to 4
+      setTimeout(function() {
+        ralphRespond(a1[Math.floor(Math.random() * 4) + 0]);
+      }, 1500);
+  } else if ((val.toLowerCase()).includes("house") || (val.toLowerCase()).includes("housing") || (val.toLowerCase()).includes("place")){
+    setTimeout(function() {
+      ralphRespond("Oh! You are looking for housing? I have few recommendation!");
+      setTimeout(function() {
+        ralphRespond("2. Homeless Shelters: toro.to/homeless");
+      }, 670);
+      setTimeout(function() {
+        ralphRespond("1. Communist Housing: toro.to/communi");
+      }, 450);
+      setTimeout(function() {
+        ralphRespond("3. Women Shelter: toro.to/womenHouse");
+      }, 850);
+    }, 1500);
+  } else {
+    ralphRespond("Honestly speaking, I am not perfect, sadly I do not know what you mean when you have said '" + val + "'")
+  }
+}
+
+function addZero(v) {
+  if (v <= 9) v = "0" + v;
+  return v;
+}
+
+function ralphRespond(val) {
+  var newVal = val;
+  var newtime = new Date();
+  newtime = addZero(newtime.getHours()) + ":" + addZero(newtime.getMinutes());
+  $(".chat").append(
+    '<p class="ralph" data-time="' + newtime + '">' + newVal + "</p>"
+  );
+  $(".chat").scrollTop($(".chat")[0].scrollHeight);
+}
+
+
+</script>
