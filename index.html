@@ -48,7 +48,7 @@
                                     <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#mission">Mission</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                                   
+
                                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
@@ -76,7 +76,7 @@
                 <div class="col-12 col-md">
                     <div class="wellcome-heading">
                         <h2>TOAH </h2>
-                      
+
                         <p>Your Infomation Spot </p>
                     </div>
                     <div class="get-start-area">
@@ -156,7 +156,7 @@
                         <div class="special_description_content">
                             <h2>Our Mission</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                         
+
                         </div>
                     </div>
                 </div>
@@ -384,7 +384,7 @@
     </section>
     <!-- ***** App Screenshots Area End *****====== -->
 
-    
+
    <!-- ***** Client Feedback Area End ***** -->
 
     <!-- ***** CTA Area Start ***** -->
@@ -394,7 +394,7 @@
                 <div class="col-md-8">
                     <div class="membership-description">
                         <h2>Check Out our Main Website</h2>
-                       
+
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -407,7 +407,7 @@
     </section>
     <!-- ***** CTA Area End ***** -->
 
-   
+
 
     <!-- ***** Contact Us Area Start ***** -->
     <section class="footer-contact-area section_padding_100 clearfix" id="contact">
@@ -473,6 +473,49 @@
     <!-- ***** Contact Us Area End ***** -->
 
 
+
+    <!-- Side Modal Top Right -->
+
+    <!-- To change the direction of the modal animation change .right class -->
+    <div class="modal fade right" id="sideModalTR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <!-- Add class .modal-side and then add class .modal-top-right (or other classes from list above) to set a position to the modal -->
+        <div class="modal-dialog modal-side modal-bottom-right" role="document">
+
+
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="main">
+              <div class="chatbox">
+                <div class="header">
+                  <div class="icon"></div>
+                  <p>TOAH. </p><p style="color:#33cc33"><strong>Online now</strong></p>
+                </div>
+                <div class="chat">
+                  <p class="ralph" data-time="14:22">Hello! I am TOAH. Do you have any question for me?</p>
+                </div>
+                <div class="footer">
+                  <p contenteditable></p>
+                  <button class="submit-chat"><i class="fas fa-arrow-circle-right"></i></button>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Side Modal Top Right -->
+
+
+
+
+
+
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
         <!-- footer logo -->
@@ -500,7 +543,8 @@
             <p>Copyright ©2018 TOAH </p>
         </div>
     </footer>
-    <a href="#top" style="position: fixed; display: block bottom: 0px; left: 0px;"><i class="fa fa-angle-up"></i></a>
+    <a href="#" class="btn btn-info" type="button" data-toggle="modal" data-target="#sideModalTR" id='modalButton'>Chat Now!</a>
+
     <!-- ***** Footer Area Start ***** -->
 
     <!-- Jquery-2.2.4 JS -->
@@ -517,6 +561,9 @@
     <script src="js/footer-reveal.min.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
+    <script src="js/custom.js"></script>
 </body>
+
+
 
 </html>

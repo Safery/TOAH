@@ -1,5 +1,5 @@
 /* --------------------------
-:: Template Name: Colorlib App - App Landing Page 
+:: Template Name: Colorlib App - App Landing Page
 :: Template Author: Colorlib
 :: Template Author URI: https://colorlib.com/
 :: Description: Colorlib is a One Page based App Landing Template. It's very clean, creative & beautiful. It's super     responsive & ultra light.
@@ -1312,7 +1312,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', end
 
 .jumbotron{
   border:none;
-  
+
 }
 
 input[type=date], input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
@@ -1342,4 +1342,153 @@ input[type=date], input[type=datetime-local], input[type=email], input[type=numb
 
 .btn-primary{
     background-color:#01579B;
+}
+
+#sideModalTR{
+  margin-top: 21%;
+  margin-left: 81%;
+  height: 650px;
+}
+
+
+import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+* {
+padding: 0;
+margin: 0;
+font-family: "Quicksand";
+box-sizing: border-box;
+}
+
+.main {
+margin-top: -15%;
+min-width: 500px;
+min-height: 450px;
+}
+.main h1 {
+color: rgba(255, 255, 255, 0.3);
+font-size: 90px;
+max-width: 600px;
+font-weight: 400;
+padding-top: 100px;
+margin-left: 200px;
+}
+.main .chatbox {
+position: fixed;
+bottom: 20px;
+background: #fff;
+width: 250px;
+border-radius: 6px;
+}
+.main .chatbox .header {
+border-bottom: solid 1px rgba(51, 51, 51, 0.2);
+padding: 10px;
+}
+.main .chatbox .header p {
+font-size: 12px;
+}
+.main .chatbox .header .icon {
+background: url("http://78.media.tumblr.com/ce5a3e2636c046668d676586d6a8797a/tumblr_n1zja6VwQm1qmcarzo6_r2_250.gif") -10px center;
+width: 30px;
+height: 30px;
+float: left;
+background-size: cover;
+border-radius: 50%;
+margin-right: 10px;
+}
+.main .chatbox .chat {
+height: 280px;
+padding: 10px;
+font-size: 12px;
+font-weight: 500;
+overflow-y: scroll;
+}
+.main .chatbox .chat p {
+background: #17275B;
+color: #fff;
+border-radius: 9px;
+padding: 8px 10px;
+display: inline-block;
+max-width: calc(100% - 20px);
+margin-top: 15px;
+position: relative;
+margin-bottom: 10px;
+clear: both;
+}
+.main .chatbox .chat p:before {
+content: attr(data-time);
+color: #cccccc;
+left: 4px;
+font-size: 12px;
+top: -15px;
+position: absolute;
+}
+.main .chatbox .chat p.self {
+float: right;
+background: #97EAF7;
+margin-left: auto;
+}
+.main .chatbox .chat p.self:before {
+right: 4px;
+left: auto;
+}
+.main .chatbox .chat p.ralph {
+margin-right: auto;
+float: left;
+}
+.main .chatbox .footer {
+width: 100%;
+position: relative;
+}
+.main .chatbox .footer p {
+width: 100%;
+background: #e6e6e6;
+padding: 10px;
+height: 34px;
+font-size: 12px;
+border: none;
+font-weight: 500;
+display: block;
+border-bottom: solid 10px #e6e6e6;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+position: relative;
+overflow-y: scroll;
+}
+.main .chatbox .footer button {
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+border: none;
+background: none;
+cursor: pointer;
+color: #17275B;
+transition: all 300ms;
+}
+.main .chatbox .footer button:hover {
+color: #97EAF7;
+}
+.main .chatbox .footer:after {
+height: 10px;
+width: 100%;
+left: 0;
+display: block;
+top: 0;
+position: absolute;
+z-index: 10;
+content: "";
+background: linear-gradient(to bottom, #e6e6e6, rgba(255, 255, 255, 0));
+}
+.main .heart {
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+color: rgba(255, 255, 255, 0.2);
+}
+
+#modalButton{
+  position: fixed;
+  bottom: 0px;
+  left: 0px; 
 }
